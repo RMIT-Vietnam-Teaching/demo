@@ -1,5 +1,6 @@
 package controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Item;
 import entity.Order;
@@ -62,7 +63,8 @@ public class OrderController {
     }
     public static void read() {
         try {
-            orders = mapper.readValue(new File("orders.json"), Map.class);
+            orders = mapper.readValue(new File("orders.json"), new TypeReference<Map<Integer, Order>>() {
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }

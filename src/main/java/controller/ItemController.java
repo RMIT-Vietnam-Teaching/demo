@@ -1,5 +1,6 @@
 package controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.Item;
 import lombok.Getter;
@@ -50,7 +51,8 @@ public class ItemController {
     }
     public static void read() {
         try {
-            items = mapper.readValue(new File("items.json"), Map.class);
+            items = mapper.readValue(new File("items.json"), new TypeReference<Map<Integer, Item>>() {
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }

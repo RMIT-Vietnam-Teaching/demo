@@ -45,9 +45,9 @@ public class HelloController {
 
     public void initialize() {
         res.setWrapText(true);
-        cL = new ComboBox<>(FXCollections.observableArrayList(CustomerController.getCustomers().values()));
-        iL = new ListView<>(FXCollections.observableArrayList(ItemController.getItems().values()));
-        dL = new ComboBox<>(FXCollections.observableArrayList(DeliverymanController.getDeliverymen().values()));
+        cL.setItems(FXCollections.observableArrayList(CustomerController.getCustomers().values()));
+        iL.setItems(FXCollections.observableArrayList(ItemController.getItems().values()));
+        dL.setItems(FXCollections.observableArrayList(DeliverymanController.getDeliverymen().values()));
         iL.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
@@ -58,6 +58,7 @@ public class HelloController {
         } catch (Exception e) {
             res.setText(e.getMessage());
         }
+        initialize();
     }
     public void cSN() {
         try {
