@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo.HelloController">
+
+    <ToggleButton text="Search ascendingly" fx:id="asc"/>
+    <HBox>
+        <TabPane>
+            <tabs>
+                <Tab text="Customers">
+                    <HBox>
+                        <VBox>
+                            <TextField promptText="ID" fx:id="cI"/>
+                            <TextField promptText="Name" fx:id="cN"/>
+                            <TextField promptText="Address" fx:id="cA"/>
+                            <TextField promptText="Phone number" fx:id="cP"/>
+                        </VBox>
+                        <ButtonBar>
+                            <buttons>
+                                <Button text="Add" onAction="#addC"/>
+                                <Button text="Update" onAction="#upC"/>
+                                <Button text="Search by name" onAction="#searchCN"/>
+                                <Button text="Search by phone" onAction="#searchCP"/>
+                            </buttons>
+                        </ButtonBar>
+                    </HBox>
+                </Tab>
+                <Tab text="Deliveryman">
+                    <HBox>
+                        <VBox>
+                            <TextField promptText="ID" fx:id="dI"/>
+                            <TextField promptText="Name" fx:id="dN"/>
+                            <TextField promptText="Phone number" fx:id="dP"/>
+                        </VBox>
+                        <ButtonBar>
+                            <buttons>
+                                <Button text="Add" onAction="#addD"/>
+                                <Button text="Update" onAction="#upD"/>
+                                <Button text="Delete" onAction="#delD"/>
+                                <Button text="Search by name" onAction="#searchDN"/>
+                                <Button text="Search by phone" onAction="#searchDP"/>
+                            </buttons>
+                        </ButtonBar>
+                    </HBox>
+                </Tab>
+                <Tab text="Item">
+                    <HBox>
+                        <VBox>
+                            <TextField promptText="ID" fx:id="iI"/>
+                            <TextField promptText="Name" fx:id="iN"/>
+                            <TextField promptText="Price" fx:id="iP"/>
+                        </VBox>
+                        <ButtonBar>
+                            <buttons>
+                                <Button text="Add" onAction="#addI"/>
+                                <Button text="Update" onAction="#upI"/>
+                                <Button text="Delete" onAction="#delI"/>
+                                <Button text="Search by name" onAction="#searchIN"/>
+                                <Button text="Search by price" onAction="#searchIP"/>
+                            </buttons>
+                        </ButtonBar>
+                    </HBox>
+                </Tab>
+                <Tab text="Order">
+                    <HBox>
+                        <VBox>
+                            <TextField promptText="ID" fx:id="oI"/>
+                            <DatePicker promptText="Date of creation" fx:id="oD"/>
+                            <ComboBox promptText="Choose customer" fx:id="cL"/>
+                            <Label text="Choose items:"/>
+                            <ListView fx:id="iL"/>
+                            <ComboBox promptText="Choose deliveryman" fx:id="dL"/>
+                        </VBox>
+                        <ButtonBar>
+                            <buttons>
+                                <Button text="Add" onAction="#addO"/>
+                                <Button text="Update" onAction="#upO"/>
+                                <Button text="Delete" onAction="#delO"/>
+                                <Button text="Search by ID" onAction="#searchOI"/>
+                                <Button text="Search by Date of Creation" onAction="#searchOD"/>
+                            </buttons>
+                        </ButtonBar>
+                    </HBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <VBox>
+            <Label text="Results:"/>
+            <TextArea fx:id="res"/>
+        </VBox>
+    </HBox>
+</VBox>
